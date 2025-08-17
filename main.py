@@ -11,7 +11,7 @@ st.title("👺 推し！どくしょ指南")
 st.write("キーワードやテーマを入力するだけで、いけてる👺が八艘跳びをくりだしつつ今読むべき世界文学を提案します。")
 
 try:
-  api_key = os.environ["GOOGLE_API_KEY"]
+  api_key = st.secrets["GOOGLE_API_KEY"]
   genai.configure(api_key=api_key)
   model = genai.GenerativeModel('gemini-1.5-flash-latest')
 except KeyError:
